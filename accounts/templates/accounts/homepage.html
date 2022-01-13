@@ -1,0 +1,267 @@
+ {% extends 'layout.html' %}
+ {% load static %}
+
+ {% block title %}
+ <title>Homepage</title>
+ {% endblock title %}
+
+ {% block main_content %}
+
+<section id="slider">
+        <div id="carouselExampleIndicators" class="carousel slide mt-5" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="{% static 'images/slider-9.jpg' %}" class="d-block w-100" alt="first slide">
+                <div class="carousel-caption d-none d-md-block mb-5 pb-5 ">
+                    <h5 class="mb-0 animatable in-down fw-bold">Quality Cake... <br> with eggs, sweets & breads</h5>
+                    <p class="animatable fadeInUp fs-5 fst-italic">Lorem ipsum dolor sit amet, consectetur adipisicing elitm itaque officia totam, <br> facere harum repudiandae dolorum commodi natus mollitia?</p>
+
+                </div>
+                  <div class="carousel-caption  pb-2 purchase mt-4 me-5">
+                      <h6 class="fw-bold fs-2 text-start" style="color:#753375;">Quality Cakes made with Love!</h6>
+                      <a href="/cakes/show_categories" class="btn btn-danger rounded-pill px-3 mb-2" >Purchase</a>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                <img src="{% static 'images/slider-10.jpg' %}" class="d-block w-100" alt="second slide"  >
+                <div class="carousel-caption d-none d-md-block mb-5 pb-5">
+                    <h5 class="animatable in-down fw-bold">Cake Bakery... <br> make delicious product</h5>
+                    <p class="animatable fadeInUp fs-5 fst-italic">Lorem ipsum dolor sit amet, consectetur adipisicing elitm itaque officia totam, <br> facere harum repudiandae dolorum commodi natus mollitia?</p>
+                </div>
+                  <div class="carousel-caption  pb-2 purchase mt-4 me-5">
+                      <h6 class="fw-bold fs-2 text-start" style="color:#753375;">Quality Cakes made with Love!</h6>
+                      <a href="/cakes/show_categories" class="btn btn-danger rounded-pill px-3 mb-2">Purchase</a>
+                  </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+    </section>
+
+<section id="welcome">
+        <div class="welcome animatable fadeInUp">
+            <div class="container">
+                <div class="row pt-5 ps-3">
+                    <div class="col-md-6 col-sm-6 ps-5">
+                        <h4 class="pb-3 fs-1 fw-bold animatable fadeInUp">Welcome to Our Bakery</h4>
+                        <h6 class="pb-4 animatable fadeInUp">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur uis autem vel eum.</h6>
+                        <p class="pb-4">Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise.</p>
+                        <a href="/cakes/about_us" class="btn btn-light rounded-pill shadow-sm">Know more about us</a>
+                    </div>
+                    <div class="col-md-6 col-sm-6 ps-5">
+                        <img class="img-fluid animatable fadeInUp" src="{% static 'images/bakery.jpg'%}" alt="" width="500px" height="400px">
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+<section id="best-seller">
+    <div class="best pt-5">
+        <div class="container">
+            <div class="best-title text-center fs-1 mb-3 animatable fadeInUp">
+                <h4>Our Best Seller</h4>
+                <h6 class="pb-4">{sweet cupcakes}</h6>
+            </div>
+
+            <div id="owl-demo" class="owl-carousel owl-theme animatable fadeInUp">
+                {% for i in cakes %}
+                <div class="item">
+                    <img src="/{{i.cake_image}}" alt="Owl Image">
+                    <p class="text-center ">{{i.cake_name}}</p>
+                    <p class="text-center price">${{i.cake_price}}</p>
+                    <div class="best-click text-center ">
+                        <a href="/cakes/add_to_cart/{{i.id}}" class="btn btn-light">Add to cart</a>
+                    </div>
+                </div>
+                {% endfor %}
+
+              </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="glory">
+    <div class="our-glory">
+        <div class="container">
+            <div class="row">
+            <div class="col-md-4 col-sm-2 text-center">
+                <div class="glory-image ms-5">
+                    <img src="{% static 'images/recipe-1.png' %}" class="img-fluid" alt="">
+
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <div class="glory-title">
+                    <h4 class="me-5 animatable fadeInUp">Glorius BakeCake</h4>
+                    <p class="animatable in-down">Desert pudding desert jelly beans cupcake sweet caramels gingerbread. Fruitcake biscuits cheesecake. Cookie topping sweet muffin pudding tart bear croissant.</p>
+<!--                    <a href="about.html" class="btn btn-light rounded-pill mt-4">View more details</a>-->
+                                <!-- Button trigger modal -->
+                                    <a class="btn btn-light rounded-pill mt-4" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                      View more details
+                                    <a>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                      <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Watch our videos for more details!!</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                          </div>
+                                          <div class="modal-body py-2">
+                                              Desert pudding desert jelly beans cupcake sweet caramels gingerbread. Fruitcake biscuits cheesecake. Cookies topping sweet muffin pudding tart bear croissant.
+
+                                              <iframe width="470" height="265" src="https://www.youtube.com/embed/DVdA5CxYUGQ" title=" video player" class="pe-1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                                          </div>
+                                          <div class="modal-footer">
+                                            <button type="button" class="btn btn-light rounded-pill mt-4 shadow" data-bs-dismiss="modal">Close</button>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section id="our-services">
+    <div class="service">
+        <div class="container">
+            <div class="service-title text-center animatable fadeInUp">
+                <h4 class="fs-1">Main Services We Provide</h4>
+                <h6 class="pb-3">{our services}</h6>
+            </div>
+            <div class="service-content">
+                <div class="row text-center mt-4 animatable fadeInUp">
+                    <div class="col-md-4 " >
+                        <img src="{% static 'images/cake-11.jpg' %}" alt="" width="50%" class="image-t">
+                        <h5>Celebration Specials</h5>
+                        <p class="serve text-center">
+                            Our Tasty cupcakes are so tasty that if <br> you taste once you will fall in love instantly.
+                        </p>
+                        <a href="/cakes/show_categories" class="btn btn-light shadow rounded-pill">Order Now</a>
+                    </div>
+                    <div class="col-md-4 pt-2 animatable fadeInUp">
+                        <img src="{% static 'images/cake-66.jpg' %}" alt="" width="50%" class="image-t">
+                        <h5>Wedding Specials</h5>
+                        <p class="serve text-center">
+                         Check out our tasty wedding cakes. Ipsum is <br> simply my text of the printing .
+                        </p>
+                        <a href="/cakes/show_categories" class="btn btn-light rounded-pill shadow">Order Now</a>
+                    </div>
+                    <div class="col-md-4 pt-2 animatable fadeInUp">
+                        <img src="{% static 'images/cake-77.jpg' %}" alt="" width="50%" class="image-t">
+                        <h5>Birthday Specials</h5>
+                        <p class="serve text-center">
+                            We offer the best birthday cakes. Lorem Ipsum is <br> simply my text of the printing and Ipsum.
+
+                        </p>
+                        <a href="/cakes/show_categories" class="btn btn-light rounded-pill shadow">Order Now</a>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-md-6 col-sm-6 animatable fadeInUp">
+                        <img src="{% static 'images/img2.jpg' %}" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-md-6 col-sm-6 animatable fadeInUp">
+                        <img src="{% static 'images/img1.jpg' %}" alt="" class="img-fluid">
+                        <div class="row mt-4">
+                            <div class="col-md-6 animatable fadeInUp">
+                                <img src="{% static 'images/img3.jpg' %}" alt="" class="img-cake">
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="our-chefs">
+    <div class="chefs">
+        <div class="container">
+            <div class="chefs-title text-center  animatable fadeInUp">
+                <h4>Our Chefs</h4>
+                <h5>{golden hands}</h5>
+            </div>
+            <div class="chef-cards">
+                <div class="row ms-5">
+                    <div class="col-md-4 pt-4 text-center  animatable fadeInUp">
+                        <div class="card" style="width: 19rem;">
+                            <img class="card-img-top" src="{% static 'images/chef-2.jpg' %}" alt="Card image cap">
+                            <div class="card-body">
+                            <h5 class="card-text text-center">Corey Barnett</h5>
+                            <span>CEO-Founder</span>
+                            <p class="pt-2 fs-6">Jelly topping halvah caramels sweet cake gummi bears toffee.</p>
+                            </div>
+                            <div class="click">
+                                <ul class="list-unstyled">
+                                    <li><a href="http://www.facebook.com"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li> ‎
+                                    <li><a href="http://www.instagram.com"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="http://www.twitter.com"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                  </div>
+                  <div class="col-md-4 pt-4 text-center animatable fadeInUp">
+                    <div class="card" style="width: 19rem;">
+                        <img class="card-img-top" src="{% static 'images/chef-3.jp' %}g" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-text text-center">Ignes Buchanan</h5>
+                            <span>Master Baker</span>
+                            <p class="pt-2 fs-6">Jelly topping halvah caramels sweet cake gummi bears toffee.</p>
+                            </div>
+                            <div class="click">
+                                <ul class="list-unstyled">
+                                    <li><a href="http://www.facebook.com"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li> ‎
+                                    <li><a href="http://www.instagram.com"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="http://www.twitter.com"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                    </div>
+              </div>
+              <div class="col-md-4 pt-4 text-center animatable fadeInUp">
+                <div class="card" style="width: 19rem;">
+                    <img class="card-img-top" src="{% static 'images/chef-1.jpg' %}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-text text-center">Juan Olson</h5>
+                        <span>Master chef</span>
+                        <p class="pt-2 fs-6">Jelly topping halvah caramels sweet cake gummi bears toffee.</p>
+                        </div>
+                        <div class="click">
+                            <ul class="list-unstyled">
+                                <li><a href="http://www.facebook.com"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li> ‎
+                                <li><a href="http://www.instagram.com"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                <li><a href="http://www.twitter.com"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+ {% endblock main_content %}
