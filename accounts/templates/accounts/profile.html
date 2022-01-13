@@ -1,0 +1,71 @@
+{% extends 'layout.html' %}
+{% load bootstrap %}
+{% block title %}
+<title>Profile</title>
+{% endblock%}
+{% block main_content %}
+<div class="container">
+    <div class="row my-5 pt-5 d-flex justify-content-center">
+        <div class="category-title text-center">
+         <h4 class="text-center mb-4 animatable in-down">My Profile</h4>
+        </div>
+        <div class="settings mb-3 flex-row animatable fadeInUp">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item active" aria-current="page">Settings</li>
+                <li class="breadcrumb-item"><a href="#update">Update</a></li>
+                <li class="breadcrumb-item {{activate_profile}}"><a href="/password_change">Change password</a></li>
+                 <li class="breadcrumb-item"><a href="/cakes/my_orders">My orders</a></li>
+              </ol>
+            </nav>
+        </div>
+        <div class="col-md-3">
+
+            <div class="card shadow-sm animatable fadeInUp ms-2"  style="width: 23rem;">
+                <div class="card-body ">
+                    <img src="/{{request.user.profile.profile_pic}}" width="450" class="img-fluid">
+                </div>
+
+            </div>
+             </div>
+            <div class="col-md-6">
+            <div class="card px-3 ms-5 shadow-sm animatable fadeInUp" style=" height:23rem;">
+                <h3 class="text-center mt-3" style="color:#ea98a0">Current Details</h3>
+                   <div class="py-3 fs-5">Firstname : {{request.user.profile.firstname}}</div>
+                    <div class="py-3 fs-5">Lastname : {{request.user.profile.lastname}}</div>
+                    <div class="py-3 fs-5">Email : {{request.user.profile.email}}</div>
+                    <div class="py-3 fs-5">Phone : {{request.user.profile.phone}}</div>
+                    <div class="py-3 ">
+                        <a href="#update" class="btn btn-primary">Update</a>
+                    </div>
+            </div>
+            </div>
+    </div>
+    <div id="update">
+        <div class="row mt-5 d-flex justify-content-center">
+            <div class="col-md-8 my-5 pt-5 animatable fadeInUp">
+
+               {% include 'messages.html' %}
+                <div class="card py-2 px-3 shadow-sm">
+                    <h3 class="text-center my-2" style="color:#ea98a0">Update Details</h3>
+                    <form class="form myForm" action="" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form | bootstrap_horizontal}}
+                        <button type="submit" class="btn btn-primary mt-2">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+</div>
+
+</div>
+<script>
+    var form_fields = document.getElementsByTagName('input')
+    form_fields[1].placeholder = 'Enter first name';
+    form_fields[2].placeholder = 'Enter last name';
+    form_fields[3].placeholder = 'Enter phone number';
+    for (var field in form_fields){
+    field.className += ' my-2'
+    }
+</script>
+{% endblock %}
