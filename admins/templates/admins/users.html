@@ -1,0 +1,39 @@
+{% extends 'layout-admin.html' %}
+{% block title %}
+<title>All Users</title>
+{% endblock%}
+{% block main_content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 offset-md-1 mt-5 mb-3">
+            <h1 class="text-center" style="color:#3e606b;">All Users</h1>
+            {% include 'messages.html' %}
+            <div class="card py-2 ">
+                <a class="btn btn-primary btm-sm ms-auto mb-2"
+                href="/register">Add New Users</a>
+                <table class="table-striped">
+                    <tr>
+                        <th>Email</th>
+                        <th>Username</th>
+                        <th>Actions</th>
+                    </tr>
+                    {% for i in users %}
+                    <tr>
+                        <td> {{ i.email }}</td>
+                        <td> {{ i.username }}</td>
+                        <td><a class="btn btn-primary"
+                               href="/admins/promote/{{i.id}}"
+                               onclick="return confirm('Are You Sure You Want To Promote This User?')">Promote To Admin</a> &nbsp;
+                            <a class="btn btn-danger"
+                               href="/admins/delete_user/{{i.id}}"
+                               onclick="return confirm('Are You Sure You Want To Delete?')">Delete</a></td>
+                           </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

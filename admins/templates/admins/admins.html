@@ -1,0 +1,34 @@
+{% extends 'layout-admin.html' %}
+{% block title %}
+<title>All Admins</title>
+{% endblock%}
+{% block main_content %}
+<div class="container">
+    <div class="row mt-5 mb-3">
+        <div class="col-md-10 offset-md-1">
+            <h1 class="text-center" style="color:#3e606b;">All Admins</h1>
+            {% include 'messages.html' %}
+            <div class="card mt-3 mb-5">
+                <table class="table-striped">
+                    <tr>
+                        <th>Email</th>
+                        <th>Username</th>
+                        <th>Actions</th>
+                    </tr>
+                    {% for i in admins %}
+                    <tr>
+                        <td> {{ i.email }}</td>
+                        <td> {{ i.username }}</td>
+                        <td><a class="btn btn-primary my-1"
+                               href="/admins/demote/{{i.id}}"
+                               onclick="return confirm('Are You Sure You Want To Demote this Admin?')">Demote To User</a> &nbsp;
+                           </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
