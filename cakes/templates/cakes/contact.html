@@ -1,0 +1,114 @@
+{% extends 'layout.html' %}
+ {% load static %}
+    {% load bootstrap %}
+ {% block title %}
+ <title>Contact Us</title>
+ {% endblock title %}
+
+ {% block main_content %}
+<section id="contact-banner">
+        <div class="banner">
+            <div class="container-fluid mt-5">
+                <div class="banner-inner">
+                    <div class="content animatable in-down">
+                        <h3>Contact Us</h3>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="homepage.html">Home</a>
+                            </li>
+                            <li>/ Contact us</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact-us">
+            <div class="container">
+                <div class="contact-title">
+                    <div class="row center">
+                    <div class="col-md-6 col-sm-6 ps-5">
+                        <p class="ps-5 pt-3 animatable fadeInUp">Do you have anything in your mind to let us know? Kindly don't delay to connect to us by means of our contact form.</p>
+                    </div>
+                    <div class="col-ms-6 col-sm-6 ps-5 animatable fadeInUp">
+                        <h4 >Contact Us</h4>
+                        <h5>{get in touch}</h5>
+                    </div>
+                    </div>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-md-6 col-sm-6 pt-4 ps-5">
+                            <div class="container contact-form animatable fadeInUp">
+                                <div class="row mt-4 pb-5 mb-5">
+
+                                        {% include 'messages.html' %}
+                                        <div class="card py-3 px-3 shadow">
+                                        <form class="form myForm" action="" method="POST" enctype="multipart/form-data">
+                                            {% csrf_token %}
+                                            {{ form_message | bootstrap_horizontal }}
+                                            <button type="submit" class="btn btn-primary shadow-sm mt-1 ">Send</button>
+                                        </form>
+                                    </div>
+
+                                </div>
+                                </div>
+
+
+                        </div>
+                        <div class="col-md-5 col-sm-6 pt-5 ps-5">
+                            <div class="contact-box animatable fadeInUp">
+                                <div class="info-box">
+                                    <div class="info">
+                                        <h6>Address</h6>
+                                        <p>South Brisbane,Old 4101 India</p>
+                                    </div>
+                                </div>
+
+                                <div class="info-box">
+                                    <div class="info pt-3">
+                                        <h6>Phone</h6>
+                                        <p>+ 1 (234) 567 8901</p>
+                                        <p>+ 1 (234) 555 8901</p>
+                                    </div>
+                                </div>
+                                <div class="info-box">
+                                    <div class="info pt-3">
+                                        <h6>Email</h6>
+                                        <p>info2@bakecake.com</p>
+                                    </div>
+                                </div>
+                                <div class="info-box">
+                                    <div class="info pt-3">
+                                        <h6>Opening hours</h6>
+                                        <p>Mon-Fri: 8am-8pm</p>
+                                        <p>Sat-Sun: 9am-5pm</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="map">
+        <div class="map-container animatable fadeInUp">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3539.8123741688128!2d153.01420871505263!3d-27.47510002351054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b915a0835840a2f%3A0xdd5e3f5c208dc0e1!2sMelbourne%20St%2C%20South%20Brisbane%20QLD%204101%2C%20Australia!5e0!3m2!1sen!2snp!4v1625138533047!5m2!1sen!2snp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+<script>
+    var form_fields = document.getElementsByTagName('input')
+    form_fields[1].placeholder = "Enter name"
+    form_fields[2].placeholder = "Enter email"
+    form_fields[3].placeholder = "Enter phone"
+    form_fields[4].placeholder = "Enter message"
+
+
+    for(field in form_fields){
+    form_fields[field].className += ' my-2'
+    }
+</script>
+ {% endblock main_content %}
