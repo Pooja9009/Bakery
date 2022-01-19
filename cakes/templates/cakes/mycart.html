@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+{% block title %}
+<title>My carts</title>{% endblock%}
+{% block main_content %}
+<div id="category-admin" class="container">
+    <div class="row mt-5 mb-3">
+        <div class="col-md-10 offset-md-1">
+
+            <div class="category-title text-center mt-5 animatable in-down">
+                <h4>My carts</h4>
+                <h5>{elegant collections}</h5>
+            </div>
+            {% include 'messages.html' %}
+            <div class="card animatable fadeInUp shadow-sm">
+                <table class="table-striped mb-4 mt-4 text-center table-responsive">
+                    {% for i in items %}
+
+                    <tr class="table-cart">
+                        <td> <img src="/{{i.cake.cake_image}}" alt="" width="150"></td>
+                        <td> {{ i.category_name }}</td>
+                        <td class="text-start px-2"> {{ i.cake.cake_name}}</td>
+                        <td class="text-start px-2"> $ {{ i.cake.cake_price}}</td>
+
+
+                        <td><a class="btn btn-primary mb-1 rounded-pill px-3 py-2" href="/cakes/order_form/{{i.id}}/{{i.cake.id}}"
+                        onclick="return confirm('Are you sure?')">Order</a> &nbsp;
+                            <a class="btn btn-danger rounded-pill py-2"
+                               href="/cakes/remove_cart/{{i.id}}"
+                               onclick="return confirm('Are you sure?')"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                    </tr>
+
+                    {% endfor %}
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
