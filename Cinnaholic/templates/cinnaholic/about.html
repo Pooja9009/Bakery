@@ -1,0 +1,258 @@
+{% extends 'layout.html' %}
+ {% load static %}
+
+ {% block title %}
+ <title>About Us</title>
+ {% endblock title %}
+
+ {% block main_content %}
+<section id="about-banner">
+        <div class="banner">
+            <div class="container-fluid mt-5">
+                <div class="banner-inner">
+                    <div class="content animatable in-down">
+                        <h3>About Us</h3>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="homepage.html">Home</a>
+                            </li>
+                            <li>/ About us</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- our bakery -->
+    <section id="our-bakery">
+        <div class="bakery">
+            <div class="container">
+                <div class="bakery-content  animatable fadeInUp">
+                    <h2>Our Bakery Approach</h2>
+                    <h6>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis illum vitae voluptatum maiores molestias, labore atque obcaecati rem repudiandae sapiente minus voluptate perferendis error, dignissimos aliquam hic, adipisci quos fugit!</h6>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ratione quasi corporis tempore culpa?
+                        Quasi quaerat cum totam alias nobis vel deserunt id atque quibusdam, tempora consequatur possimus quam obcaecati! Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus deserunt ducimus dignissimos voluptatibus modi veritatis saepe eligendi ad, fugiat, voluptatum fuga provident explicabo cum, in quis eveniet cumque molestias fugit!</p>
+                </div>
+                <div class="row bakery-image">
+                    <div class="col-md-4 col-sm-12 text-center mt-3 animatable fadeInUp"><img class="img-fluid shadow" src="{% static 'images/bakery-2.jpg' %}" alt=""></div>
+                    <div class="col-md-4 col-sm-12 text-center mt-3 animatable fadeInUp"><img class="img-fluid shadow" src="{% static 'images/bakery-3.jpg' %}" alt=""></div>
+                    <div class="col-md-4 col-sm-12 text-center mt-3 animatable fadeInUp"><img class="img-fluid shadow" src="{% static 'images/bakery-1.jpg' %}" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ---------our record ------------->
+    <section id="our-record animatable fadeInUp">
+        <div class="record">
+            <div class="container mt-5 pt-5 text-center">
+                <div class="record-title animatable fadeInUp">
+                    <h4 class="heading">Our Records</h4>
+                    <h5>{Winning awards}</h5>
+                </div>
+                <div class="awards">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4">
+                            <div class="first-award text-center">
+                                <div class="award-icon">
+                                    <img src="{% static 'images/award-1.png' %}" alt="">
+                                </div>
+                                <div class="award-content pb-5">
+                                    <h3 class="mt-3">BAKERY OF THE MONTH</h3>
+                                    <span>2010-2012</span>
+                                    <p class="mt-2">Tart bear claw cake tiramisu chocolate bar gummies dragée lemon drops brownie. Jujubes chocolate cake sesame snaps</p>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn py-2 px-4" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                      Read More
+                                    </button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                      <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Our achievements! Your Blessings!</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                          </div>
+                                          <div class="modal-body">
+                                              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, dolore error ex facilis maiores molestiae
+                                                  non placeat praesentium quae quas quidem reiciendis ut voluptatum. Dolores doloribus molestias quae quas
+                                                  quibusdam!
+
+                                              Autem beatae dolores ea excepturi facere, facilis hic illum ipsam libero necessitatibus nesciunt
+                                                  obcaecati quae quas quod quos recusandae tempora tenetur, vitae voluptatem voluptates. Consequuntur
+                                                  laudantium nihil obcaecati repudiandae voluptates.
+
+                                          </div>
+                                          <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <div class="first-award text-center">
+                                <div class="award-icon">
+                                    <img src="{% static 'images/award-2.png' %}" alt="">
+                                </div>
+                                <div class="award-content">
+                                    <h3 class="mt-3">BAKERY OF THE MONTH</h3>
+                                    <span>2010-2012</span>
+                                    <p class="mt-2">Tart bear claw cake tiramisu chocolate bar gummies dragée lemon drops brownie. Jujubes chocolate cake sesame snaps</p>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn py-2 px-4" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                      Read More
+                                    </button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                      <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Our achievements! Your Blessings!</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                          </div>
+                                          <div class="modal-body">
+                                              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, dolore error ex facilis maiores molestiae
+                                                  non placeat praesentium quae quas quidem reiciendis ut voluptatum. Dolores doloribus molestias quae quas
+                                                  quibusdam!
+
+                                              Autem beatae dolores ea excepturi facere, facilis hic illum ipsam libero necessitatibus nesciunt
+                                                  obcaecati quae quas quod quos recusandae tempora tenetur, vitae voluptatem voluptates. Consequuntur
+                                                  laudantium nihil obcaecati repudiandae voluptates.
+
+                                          </div>
+                                          <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <div class="first-award text-center">
+                                <div class="icon award-icon ">
+                                    <img src="{% static 'images/award-3.png' %}" alt="">
+                                </div>
+                                <div class="award-content">
+                                    <h3 class="mt-3">BAKERY OF THE MONTH</h3>
+                                    <span>2010-2012</span>
+                                    <p class="mt-2">Tart bear claw cake tiramisu chocolate bar gummies dragée lemon drops brownie. Jujubes chocolate cake sesame snaps</p>
+                                   <!-- Button trigger modal -->
+                                    <button type="button" class="btn py-2 px-4" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                      Read More
+                                    </button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                      <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Our achievements! Your Blessings!</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                          </div>
+                                          <div class="modal-body ">
+                                              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, dolore error ex facilis maiores molestiae
+                                                  non placeat praesentium quae quas quidem reiciendis ut voluptatum. Dolores doloribus molestias quae quas
+                                                  quibusdam!
+
+                                              Autem beatae dolores ea excepturi facere, facilis hic illum ipsam libero necessitatibus nesciunt
+                                                  obcaecati quae quas quod quos recusandae tempora tenetur, vitae voluptatem voluptates. Consequuntur
+                                                  laudantium nihil obcaecati repudiandae voluptates.
+
+                                          </div>
+                                          <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="our-chefs">
+        <div class="chefs about-chef">
+            <div class="container">
+                <div class="chefs-title text-center  animatable fadeInUp">
+                    <h4>Our Chefs</h4>
+                    <h5>{Golden hands}</h5>
+                </div>
+                <div class="chef-cards">
+                    <div class="row ms-5">
+                        <div class="col-md-4 pt-4 text-center animatable fadeInUp">
+                            <div class="card" style="width: 19rem;">
+                                <img class="card-img-top" src="{% static 'images/chef-2.jpg' %}" alt="Card image cap">
+                                <div class="card-body">
+                                <h5 class="card-text">Corey Barnett</h5>
+                                <span>CEO-Founder</span>
+                                <p class="pt-2">Jelly topping halvah caramels sweet cake gummi bears toffee.</p>
+                                </div>
+                                <div class="click">
+                                    <ul class="list-unstyled">
+                                        <li><a href="http://www.facebook.com"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li> ‎
+                                        <li><a href="http://www.instagram.com"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                        <li><a href="http://www.twitter.com"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                      </div>
+                      <div class="col-md-4 pt-4 text-center animatable fadeInUp">
+                        <div class="card" style="width: 19rem;">
+                            <img class="card-img-top" src="{% static 'images/chef-3.jpg' %}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-text">Ignes Buchanan</h5>
+                                <span>Master Baker</span>
+                                <p class="pt-2">Jelly topping halvah caramels sweet cake gummi bears toffee.</p>
+                                </div>
+                                <div class="click">
+                                    <ul class="list-unstyled">
+                                        <li><a href="http://www.facebook.com"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li> ‎
+                                        <li><a href="http://www.instagram.com"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                        <li><a href="http://www.twitter.com"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+                                    </ul>
+                                </div>
+                        </div>
+                  </div>
+                  <div class="col-md-4 pt-4 text-center animatable fadeInUp">
+                    <div class="card" style="width: 19rem;">
+                        <img class="card-img-top" src="{% static 'images/chef-1.jpg' %}" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-text">Juan Olson</h5>
+                            <span>Master chef</span>
+                            <p class="pt-2">Jelly topping halvah caramels sweet cake gummi bears toffee.</p>
+                            </div>
+                            <div class="click">
+                                <ul class="list-unstyled">
+                                    <li><a href="http://www.facebook.com"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li> ‎
+                                    <li><a href="http://www.instagram.com"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="http://www.twitter.com"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+ {% endblock main_content %}
