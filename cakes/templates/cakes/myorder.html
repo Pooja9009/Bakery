@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+{% block title %}
+<title>All Orders</title>{% endblock%}
+{% block main_content %}
+<div id="category-admin" class="container">
+    <div class="row mt-5 mb-3">
+        <div class="col-md-10 offset-md-1">
+
+            <div class="category-title text-center mt-5 animatable in-down">
+                <h4>My Orders</h4>
+                <h5>{elegant orders}</h5>
+            </div>
+            {% include 'messages.html' %}
+            <div class="card animatable fadeInUp shadow table-responsive">
+                <table class="table-striped mb-4 mt-0 text-center">
+                    <thead>
+                    <th class="px-3">Cake</th>
+                    <th class="px-3">Price</th>
+                    <th class="px-3">Quantity</th>
+                    <th class="px-3">Total Price</th>
+                    <th class="px-3">Ordered Date</th>
+                    <th class="px-3">Contact No.</th>
+                    <th class="px-3">Location</th>
+                    <th class="px-3">Status</th>
+                    </thead>
+                    {% for i in items %}
+
+                    <tr class="table-cart">
+                        <td>{{i.cake.cake_name}}</td>
+                        <td>${{i.cake.cake_price}}</td>
+                        <td> {{i.quantity}}</td>
+                        <td>${{i.total_price}}</td>
+                        <td> {{i.created_date}}</td>
+                        <td> {{i.contact_no}}</td>
+                        <td> {{i.address}}</td>
+                        <td> {{i.status}}</td>
+                    </tr>
+
+                    {% endfor %}
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
