@@ -1,0 +1,115 @@
+.banner{
+    background: url(../images/banner-bg.jpg) no-repeat scroll center center;
+    background-size: cover;
+    height: 400px;
+}
+.content{
+    color: #fff;
+    text-align: center;
+    padding-bottom: 80px;
+}
+.content h3{
+    color: #fff;
+    padding-top: 113px;
+    font-family: 'Playfair Display', sans-serif;
+    font-weight: bold;
+    font-size: 62px;
+}
+.content ul li{
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 16px;
+    font-weight: 700;
+}
+.content ul li a{
+    color: #f195b2;
+    text-decoration: none;
+}
+/*-----category card styling--------*/
+.category-title h4{
+    font-family: "Playfair Display", serif;
+    font-weight: bold;
+    color: #3e606b;
+    font-size: 36px;
+}
+.category-title h5{
+    font-weight: 600;
+    color: #f195b2;
+    margin-bottom: 45px;
+}
+#category a{
+    text-decoration: none;
+    color: #000;
+}
+
+#category .card:hover{
+    border: 3px solid #5b9bb6;
+    transition: all 0.3s ease-in-out;
+}
+.cat-text{
+    text-align: justify;
+    color:#626467;
+}
+.cat-body h5{
+    color:#f195b2;
+
+}
+/*------------------show cakes styling---------------*/
+.image{
+    overflow: hidden;
+}
+.cake-body{
+    position: relative;
+}
+.cake-price{
+    width: 80px;
+    height: 70px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -40px;
+    line-height: 60px;
+    background-color: #fff;
+    color: #3e606b;
+    font-family: 'Playfair Display';
+    font-style: italic;
+}
+.cake-name{
+    margin-top: 5px;
+    font-family: 'Playfair Display',sans-serif;
+}
+#cakes a{
+    background-color: #f195b2;
+    border: 1px solid #f195b2;
+    padding: 1px 17px;
+}
+
+#cakes a:hover{
+    background-color: #fff;
+    color: #f195b2;
+    transition: all 0.4s ease;
+}
+#cakes .card:hover img{
+    transform: scale(1.2);
+    transition: all 0.5s;
+    background: rgba(black, 0.5);
+}
+#cakes .dollar{
+    color: #3e606b;
+}
+#heart{
+    padding:0;
+}
+#heart i{
+    font-size:16px;
+    color:#fff;
+}
+#heart i:hover{
+    color: #f195b2;
+    transition: all 0.4s ease;
+}
+.btn:hover{
+    transform: translateY(5px);
+    transition: all 0.3s ease;
+}

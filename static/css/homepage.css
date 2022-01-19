@@ -1,0 +1,335 @@
+/* ------------slider-styling--------- */
+.carousel-caption{
+    font-family: "Playfair Display", serif;
+}
+.carousel-caption h5{
+    font-size: 60px;
+    color: #753375;
+    text-align: left;
+    line-height: 70px;
+}
+.carousel-caption p{
+    color: #000;
+    text-align: left;
+    letter-spacing: 1px;
+    line-height: 28px;
+    margin-top: 15px;
+}
+#slider .purchase{
+    visibility:hidden;
+}
+#slider .purchase a{
+    background-color:#ea98a0;
+    border:1px solid #ea98a0;
+}
+#slider .purchase a:hover{
+    background-color:#fff;
+    color:#ea98a0;
+    transition:all 0.5s ease;
+}
+@media screen and (max-width:700px) {
+    .top{
+        display: none;
+    }
+    .carousel-caption h5{
+        font-size:2em;
+    }
+    .carousel-caption p{
+        font-size:2em;
+    }
+    #slider .purchase{
+        visibility:visible;
+    }
+}
+/*-------welcome section styling--------*/
+.welcome{
+    padding: 70px 0;
+    background-color: #f6f6f6;
+}
+.welcome h4{
+    font-family: "Playfair Display", serif;
+    color: #3e606b;
+}
+.welcome h6{
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 28px;
+
+}
+.welcome p{
+    line-height: 29px;
+}
+.welcome .btn{
+    background: #ea98a0;
+    padding: 10px 20px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+.welcome .btn:hover{
+    background-color: #fff;
+    color: #ea98a0;
+    border: 1px solid #ea98a0;
+    transition: 0.3s;
+}
+/* ------------best-seller--------- */
+#best-seller{
+    padding: 50px 0;
+}
+.best-title h4{
+    font-family: "Playfair Display", serif;
+    font-weight: bold;
+    color: #3e606b;
+    font-size: 38px;
+}
+.best-title h6{
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 28px;
+    color: #ea98a0;
+
+}
+/* #owl-demo{
+    position: relative;
+    z-index: -1;
+
+} */
+#owl-demo .item{
+    margin: 3px;
+
+  }
+  #owl-demo .item img{
+    display: block;
+    width: 90%;
+    height: auto;
+  }
+  #owl-demo .item p{
+      font-size: 20px;
+      font-family: 'Playfair Display';
+  }
+  .best-click{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(241, 240, 240, 0.2);
+    color: #fff;
+    visibility: hidden;
+    opacity: 0;
+    /* width: 303px;
+    height: 280px; */
+}
+.item:hover .best-click{
+    visibility: visible;
+    opacity: 1;
+}
+.item .best-click a{
+    margin-top:120px;
+    font-size: 16px;
+}
+.item .best-click .btn{
+    background-color: #ea98a0;
+    color: #fff;
+    border-radius: 50px;
+    padding: 8px 25px;
+    border: 1px solid #ea98a0; ;
+    transition: all 0.3s ease-in-out;
+}
+.item .best-click .btn:hover{
+    border: 1px solid #ea98a0;
+    background-color: #fff;
+    color: #ea98a0;
+    transition: all 0.3s ease;
+}
+
+.our-glory{
+    background: url(../images/service-banner.jpg) no-repeat fixed;
+    background-size: cover;
+    height: 500px;
+    margin: 25px 0 55px 0;
+    padding: 20px;
+    width: 100%;
+}
+.our-glory img{
+    padding: 80px 0 ;
+}
+.our-glory h4{
+    color: #fff;
+    margin: 80px 0px 26px 0px;
+    font-size: 44px;
+    font-weight: 600;
+    font-family:'Playfair Display';
+
+}
+.our-glory p{
+    font-size: 21px;
+    color: #fff;
+    font-style: italic;
+    font-family:'Playfair Display';
+    letter-spacing: 1px;
+    line-height: 30px;
+
+}
+.our-glory .btn{
+    background-color: #ea98a0;
+    color: #fff;
+    border: 2px solid #ea98a0;
+    padding: 8px 16px;
+    font-size: 17px;
+}
+.our-glory .btn:hover{
+    background-color: #fff;
+    color: #ea98a0;
+    transition: all 0.3s ease;
+}
+@media screen and (max-width:700px) {
+    .glory-image img{
+        width: 40%;
+    }
+    .glory-title{
+        margin-top: -100px;
+    }
+    .glory-title h4{
+        font-size: 26px;
+    }
+    .glory-title p{
+        font-size: 14px;
+        margin-top: -20px;
+        margin-bottom: 0;
+    }
+    .our-glory .btn{
+        font-size: 14px;
+        padding: 5px 16px;
+    }
+}
+
+
+
+/* ---------------our services------------ */
+#our-services{
+    padding: 45px 0 100px 0;
+}
+.service-title h4{
+    font-family: "Playfair Display", serif;
+    font-weight: bold;
+    color: #3e606b;
+    font-size: 38px;
+}
+.service-title h6{
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 28px;
+    color: #ea98a0;
+
+}
+.service-content h5{
+    padding-top: 10px;
+    font-weight: 600;
+}
+.service-content .serve{
+    text-align: left;
+    padding: 10px 0px 10px 30px;
+    font-family: 'Playfair Display';
+}
+.service-content .btn{
+    padding: 10px 18px;
+    background-color: #ea98a0;
+    color: #fff;
+}
+.service-content .btn:hover{
+    border: 1px solid #ea98a0;
+    color: #ea98a0;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+.service-content .col-md-4{
+    border: 1px dashed rgb(228, 222, 222);
+    padding: 0 0 15px 20px;
+}
+.service-content .image-t{
+    cursor: pointer;
+    transition: all 0.9s ease;
+    padding-top: 35px ;
+}
+.service-content .image-t:hover{
+    transform: scale(2,2);
+    overflow: hidden;
+    transition: all 1s ease-in-out;
+}
+
+@media screen and (max-width:700px) {
+    .service-content img:hover{
+        transform: scale(1,1);
+    }
+    .service-content .img-cake{
+        width: 100%;
+    }
+}
+/* -----------------------our chefs-------------------- */
+.chefs{
+    padding: 60px 0 60px 30px;
+    background-color: #f6f6f6;
+}
+.chefs-title h4{
+    font-family: "Playfair Display", serif;
+    font-weight: bold;
+    color: #3e606b;
+    font-size: 36px;
+}
+.chefs-title h5{
+    font-weight: 600;
+    color: #f195b2;
+    margin-bottom: 45px;
+}
+.card-body h5{
+    font-weight: 600;
+}
+.card-body span{
+    font-size: 14px;
+    font-family: 'Playfair Display';
+    color: #f195b2;
+    margin-top: -15px;
+}
+.card-body p{
+    font-size: 14px;
+    font-weight: 600;
+
+}
+.card{
+    position: relative;
+}
+.click{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(26, 25, 25, 0.7);
+    color: #fff;
+    visibility: hidden;
+    opacity: 0;
+    width: 303px;
+    height: 266px;
+}
+.click ul li{
+    display: inline;
+}
+.click ul li a{
+    font-size: 26px;
+    color: #fff;
+    padding: 15px;
+}
+.click ul li a:hover{
+    color:#f195b2 ;
+}
+.click ul{
+    margin-top: 160px;
+}
+.card:hover .click{
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+}

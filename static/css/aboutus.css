@@ -1,0 +1,83 @@
+/* our-bakery  */
+.bakery-content{
+    text-align: center;
+    padding: 100px 0;
+    transition: 0.2s;
+}
+.bakery-content h2{
+    font-family: "Playfair Display", serif;
+    font-weight: bold;
+    color: #3e606b;
+    font-size: 36px;
+    margin-bottom: 18px;
+    padding-bottom: 15px;
+}
+.bakery-content h6{
+    font-size: 18px;
+    font-family: "Open Sans", serif;
+    color: #242424;
+    line-height: 26px;
+    margin-bottom: 30px;
+}
+.bakery-content p{
+    font-size: 16px;
+    color: #797979;
+    margin-bottom: -60px;
+}
+/* ---------------our records -------------*/
+.record{
+    background-color: #f5f3f0;
+    margin: 95px 0;
+    transition: 0.2s;
+}
+.record-title h4{
+    font-family: "Playfair Display", serif;
+    font-weight: bold;
+    color: #3e606b;
+    font-size: 36px;
+}
+.record-title h5{
+    font-weight: 600;
+    color: #f195b2;
+    margin-bottom: 55px;
+}
+.award-content h3{
+    font-size: 20px;
+    font-weight: 600;
+    font-family: 'Playfair display', sans-serif;
+}
+.award-content span{
+    font-style: italic;
+}
+.award-content p{
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.award-content .btn{
+    color:#fff;
+    border: none;
+    border-radius: 50px;
+    background-color: #ea98a0;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+.award-content .btn:hover{
+    box-shadow: 0 10px 20px 0 rgba(5,16,44,.15);
+    background-color: #fff;
+    color: #ea98a0;
+    transition: all 1s ease;
+}
+@media screen and (max-width:700px) {
+    .record{
+        padding-bottom: 10px;
+    }
+    .icon{
+        padding-top: 45px;
+    }
+}
+
+.about-chef{
+    background-color:#fff;
+    margin-top: -50px;
+}
