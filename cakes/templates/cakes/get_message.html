@@ -1,0 +1,39 @@
+{% extends 'layout-admin.html' %}
+{% block title %}
+<title>All Message</title>{% endblock%}
+{% block main_content %}
+<div class="container">
+    <div class="row mt-5 mb-3">
+        <div class="col-md-10 offset-md-1">
+            <h1 class="text-center" style="color:#3e606b;">All Messages</h1>
+            {% include 'messages.html' %}
+            <div class="card my-3">
+                <table class="table-striped text-center">
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Message</th>
+                        <th>Actions</th>
+                    </tr>
+                    {% for i in message %}
+
+                    <tr>
+                        <td> {{ i.name }}</td>
+
+                        <td> {{ i.email }}</td>
+                        <td> {{ i.phone }}</td>
+                        <td> {{ i.message }}</td>
+                        <td>&nbsp;
+                            <a class="btn btn-danger my-2"
+                               href="/cakes/delete_message/{{i.id}}"
+                               onclick="return confirm('Are you sure?')">Delete</a></td>
+                    </tr>
+                    {% endfor %}
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

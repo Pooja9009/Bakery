@@ -1,0 +1,41 @@
+{% extends 'layout-admin.html' %}
+{% block title %}
+<title>All Categories</title>{% endblock%}
+{% block main_content %}
+<div id="category-admin" class="container">
+    <div class="row mt-5 mb-3">
+        <div class="col-md-10 offset-md-1">
+            <h1 class="text-center" style="color:#3e606b;">All Category</h1>
+            {% include 'messages.html' %}
+            <div class="card">
+                <a href="/cakes/category_form"
+                   class="btn btn-primary btn-sm ms-auto mt-1">Add new category</a>
+                <table class="table-striped mb-4 mt-4 text-center">
+                    <tr class="text-center">
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Image</th>
+                        <th>Date</th>
+                        <th>Actions</th>
+                    </tr>
+                    {% for i in categories %}
+
+                    <tr>
+                        <td> {{ i.category_name }}</td>
+                        <td class="text-start px-2"> {{ i.category_description}}</td>
+                        <td> <img src="/{{i.category_image}}" alt="" width="150"></td>
+                        <td> {{ i.created_date }}</td>
+
+                        <td><a class="btn btn-primary mb-1" href="/cakes/update_category/{{i.id}}">Edit</a> &nbsp;
+                            <a class="btn btn-danger"
+                               href="/cakes/delete_category/{{i.id}}"
+                               onclick="return confirm('Are you sure?')">Delete</a></td>
+                    </tr>
+                    {% endfor %}
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
