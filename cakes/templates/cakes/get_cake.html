@@ -1,0 +1,51 @@
+{% extends 'layout-admin.html' %}
+{% load bootstrap %}
+{% block title %}
+<title>All Cakes</title>{% endblock%}
+{% block main_content %}
+<div class="container">
+    <div class="row mt-5 mb-3">
+        <div class="col-md-10 offset-md-1">
+            <h1 class="text-center" style="color:#3e606b;">All Cakes</h1>
+            {% include 'messages.html' %}
+            <div class="card card-body">
+                        <form class="form myForm p-2" method="get">
+                            {{ cake_filter.form }}
+                            <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-search" aria-hidden="true"></i></button>
+                            <a href="/cakes/cake_form"
+                   class="btn btn-primary btn-sm ms-auto float-end">Add new cake</a>
+                        </form>
+            </div>
+
+            <div class="card mt-1">
+                <table class="table-striped mb-4 mt-0 text-center">
+                    <tr class="text-center">
+                        <th>Cake Name</th>
+                        <th>Price</th>
+                        <th>Image</th>
+                        <th>Category</th>
+                        <th>Date</th>
+                        <th>Actions</th>
+                    </tr>
+                    {% for i in cakes %}
+
+                    <tr>
+                        <td> {{ i.cake_name }}</td>
+                        <td> $ {{ i.cake_price }}</td>
+                        <td><img src="/{{i.cake_image}}" alt="" width="150"></td>
+                        <td> {{ i.category.category_name }}</td>
+                        <td> {{ i.created_date }}</td>
+
+                        <td><a class="btn btn-primary" href="/cakes/update_cake/{{i.id}}">Edit</a> &nbsp;
+                            <a class="btn btn-danger"
+                               href="/cakes/delete_cake/{{i.id}}"
+                               onclick="return confirm('Are you sure?')">Delete</a></td>
+                    </tr>
+                    {% endfor %}
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
