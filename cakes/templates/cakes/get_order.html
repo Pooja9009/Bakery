@@ -1,0 +1,42 @@
+{% extends 'layout-admin.html' %}
+{% block title %}
+<title>All Orders</title>{% endblock%}
+{% block main_content %}
+<div class="container">
+    <div class="row mt-5 mb-3">
+        <div class="col-md-10 offset-md-1">
+            <h1 class="text-center" style="color:#3e606b;">All Orders</h1>
+            {% include 'messages.html' %}
+            <div class="card mt-3">
+                <table class="table-striped text-center">
+                    <tr>
+                        <th>Customer</th>
+                        <th>Cake</th>
+                        <th>Quantity</th>
+                        <th>Address</th>
+                        <th>Contact</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                    {% for i in order %}
+
+                    <tr>
+                        <td> {{ i.user.username }}</td>
+                        <td> {{ i.cake.cake_name }}</td>
+                        <td> {{ i.quantity }}</td>
+                        <td> {{ i.address }}</td>
+                        <td> {{ i.contact_no }}</td>
+                        <td>{{i.status}}</td>
+
+                        <td>&nbsp;
+                            <a class="btn btn-primary my-2"
+                               href="update_order/{{i.id}}">Update Status</a></td>
+                    </tr>
+                    {% endfor %}
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
