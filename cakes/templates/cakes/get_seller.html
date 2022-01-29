@@ -1,0 +1,42 @@
+{% extends 'layout-admin.html' %}
+{% block title %}
+<title>All Cakes</title>{% endblock%}
+{% block main_content %}
+<div class="container">
+    <div class="row mt-5 mb-3">
+        <div class="col-md-10 offset-md-1">
+            <h1 class="text-center"  style="color:#3e606b;">All Best Sellers</h1>
+            {% include 'messages.html' %}
+            <div class="card">
+                <a href="/cakes/seller_form"
+                   class="btn btn-primary btn-sm ms-auto">Add new best seller</a>
+                <table class="table-striped mb-4 mt-4 text-center">
+                    <tr class="text-center">
+                        <th>Cake Name</th>
+                        <th>Price</th>
+                        <th>Image</th>
+                        <th>Date</th>
+                        <th>Actions</th>
+                    </tr>
+                    {% for i in sellers %}
+
+                    <tr>
+                        <td> {{ i.seller_name }}</td>
+                        <td> {{ i.seller_price }}</td>
+                        <td><img src="/{{i.seller_image}}" alt="" width="150"></td>
+
+                        <td> {{ i.created_date }}</td>
+
+                        <td><a class="btn btn-primary" href="/cakes/update_seller/{{i.id}}">Edit</a> &nbsp;
+                            <a class="btn btn-danger"
+                               href="/cakes/delete_seller/{{i.id}}"
+                               onclick="return confirm('Are you sure?')">Delete</a></td>
+                    </tr>
+                    {% endfor %}
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
