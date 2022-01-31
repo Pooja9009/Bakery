@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+{% load bootstrap %}
+{% block title %}
+    <title>Order</title>
+{% endblock%}
+{% block main_content %}
+
+<div class="container">
+<div class="row pt-5 mt-4 pb-5 mb-5">
+    <div class="col-md-6 offset-md-3">
+        <div class="category-title text-center my-4 animatable in-down">
+                <h4>Order</h4>
+                <h5>{place your order}</h5>
+            </div>
+        {% include 'messages.html' %}
+        <div class="card py-2 px-3 shadow animatable fadeInUp">
+        <form class="form myForm" action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ order_form | bootstrap_horizontal }}
+            <button type="submit" class="btn btn-primary my-3">Pay with e-sewa</button>
+        </form>
+    </div>
+    </div>
+</div>
+</div>
+
+<script>
+    var form_fields = document.getElementsByTagName('input')
+    form_fields[1].placeholder = "Enter quantity"
+    form_fields[2].placeholder = "Enter phone"
+    form_fields[3].placeholder = "Enter address"
+
+    for(field in form_fields){
+    form_fields[field].className += ' my-3'
+    }
+</script>
+
+{% endblock %}
