@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+ {% load static %}
+
+ {% block title %}
+ <title>Categories</title>
+ {% endblock title %}
+
+ {% block main_content %}
+    <section id="category-banner">
+        <div class="banner">
+            <div class="container-fluid mt-5">
+                <div class="banner-inner">
+                    <div class="content animatable in-down">
+                        <h3>Category</h3>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="homepage.html">Home</a>
+                            </li>
+                            <li>/ Category</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section id="category">
+    <div class="container">
+        <div class="category-title text-center mt-5 animatable fadeInUp">
+                <h4>Our Categories</h4>
+                <h5>{elegant cakes}</h5>
+        </div>
+        <div class="row mt-5 mb-5 justify-content-around">
+            {% for i in categories %}
+             <div class="col-md-4 mt-2 d-flex justify-content-center">
+                 <a href="/cakes/show_cakes/{{i.id}}" class="{{activate_category}} animatable fadeInUp">
+                    <div class="card p-3 shadow" style="width: 20rem; height:27.3rem;">
+                      <img src="/{{i.category_image}}" class="card-img-top img-fluid rounded" alt="..." style="width:18rem;">
+                      <div class="card-body cat-body text-center">
+                          <h5 class="card-title">{{i.category_name}}</h5>
+                          <p class="card-text cat-text">{{i.category_description}}</p>
+                      </div>
+                    </div>
+                 </a>
+             </div>
+
+            {% endfor %}
+        </div>
+    </div>
+</section>
+ {% endblock main_content %}
