@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+ {% load static %}
+
+ {% block title %}
+ <title>Our cakes</title>
+ {% endblock title %}
+
+ {% block main_content %}
+
+<section id="cakes">
+    <div class="container">
+        <div class="category-title text-center mt-5 pt-2 animatable in-down">
+                <h4 class=" pt-4">Our {{categories.category_name}}</h4>
+                <h5>{elegant cakes}</h5>
+        </div>
+        <div class="row mt-5 mb-5">
+
+            {% for i in categories.cake_set.all %}
+            <div class="col-md-3 animatable fadeInUp d-flex justify-content-center">
+            <div class="card rounded-3 shadow-sm mt-2" style="width:16rem;">
+                <div class="image">
+                <img src="/{{i.cake_image}}" class="card-img-top image" alt="..." style="height:250px"></div>
+                <div class="card-body text-center cake-body">
+                    <div class="card-title cake-price fs-2"><span class="dollar fs-5">$</span>{{i.cake_price}}</div>
+                  <p class="card-text cake-name fs-5">{{i.cake_name}}</p>
+
+                  <a href="/cakes/add_to_cart/{{i.id}}" class="btn btn-primary rounded-pill btn-add" onclick="return confirm('Are you sure?')">Add to cart</a>
+                    <a href="/cakes/add_to_wishlist/{{i.id}}" class="btn btn-primary rounded-pill btn-add" id="heart" onclick="return confirm('Are you sure?')"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+ {% endblock main_content %}
