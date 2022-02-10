@@ -1,0 +1,39 @@
+{% extends 'layout-admin.html' %}
+{% load bootstrap %}
+{% block title %}
+    <title>Update Cake</title>
+{% endblock%}
+{% block main_content %}
+<style>
+    span.help-block{
+        color:red;
+    }
+
+</style>
+<div class="container">
+<div class="row pt-5 mt-4 pb-5 mb-5">
+    <div class="col-md-6 offset-md-3">
+        <h2 class="text-center mb-3">Update Cake</h2>
+        {% include 'messages.html' %}
+        <div class="card py-2 px-2">
+        <form class="form myForm" action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form_cake | bootstrap_horizontal }}
+            <button type="submit" class="btn btn-primary mt-3">Submit</button>
+        </form>
+    </div>
+    </div>
+</div>
+</div>
+
+<script>
+    var form_fields = document.getElementsByTagName('input')
+    form_fields[1].placeholder = "Enter cake name"
+    form_fields[2].placeholder = "Enter price"
+
+    for(field in form_fields){
+    form_fields[field].className += ' my-3'
+    }
+</script>
+
+{% endblock %}
