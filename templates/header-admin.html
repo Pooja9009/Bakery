@@ -1,0 +1,30 @@
+<style>
+    .navbar{background-color:#0b5ed7;}
+</style>
+<div class="navbar sticky-top">
+<a class="btn btn-dark my-2 mx-3" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+  Menu
+</a>
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Admin Dashboard</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="list-unstyled">
+     <li><a class="dropdown-item" href="/admins">Admin Dashboard</a></li>
+        <li><a class="dropdown-item {{activate_category}}" href="/cakes/get_category">Category</a></li>
+        <li><a class="dropdown-item {{activate_cake}}" href="/cakes/get_cake">Cake</a></li>
+        <li><a class="dropdown-item {{activate_seller}}" href="/cakes/get_seller">Best Seller</a></li>
+        <li><a class="dropdown-item {{activate_order}}" href="/cakes/get_order">Orders</a></li>
+        <li><a class="dropdown-item {{activate_message}}" href="/cakes/get_message">Messages</a></li>
+        <li><a class="dropdown-item {{activate_users}}" href="/admins/users">Users</a></li>
+        <li><a class="dropdown-item {{activate_admins}}" href="/admins/admins">Admins</a></li>
+        <li><a class="dropdown-item" href="/logout">Logout</a><li></li>
+   </ul>
+  </div>
+</div>
+    <div class="text-center pe-4">
+        <h4 class="fw-bold" style="color:#fff;">Admin Panel</h4>
+    </div>
+    </div>
