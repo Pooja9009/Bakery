@@ -1,36 +1,9 @@
 
 <section id="top">
-    <!-- <div class="top">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-sm-6 top-left d-inline-flex flex-row bd-highlight">
-                    <ul class="list-unstyled py-1 float-left">
-                            <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i>
-                            +977-1-3111849</a></li> ‎
-                            <li><a href="#"><i class="fa fa-mobile" aria-hidden="true"></i>
-                            9831036955</a></li>
-                            <li><a href="http://www.whatsapp.com"><i class="fa fa-comments" aria-hidden="true"></i>
-                            98911-17578</a></li>
-                            <li><a href="http://www.gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i>
-                            info@bakecake.com</a></li>
-                    </ul>
-                </div>
-                <div class=" col-md-6 col-sm-6 top-right d-inline-flex flex-row-reverse ">
-                    <ul class="list-unstyled py-1 pe-2 float-right">
-                            <li><a href="http://www.facebook.com"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li> ‎
-                            <li><a href="http://www.instagram.com"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                            <li><a href="http://www.twitter.com"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
-                            <li><a href="http://www.linkedin.com"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
     <div class="menu">
         <nav class="navbar navbar-expand-lg bg-white">
             <div class="container-fluid">
-                <a class="navbar-brand col-md-4 ms-3" href="/"><h3 class="logo"><span class="b-txt">Bake</span><span class="c-txt">Cake</span> </h3></a>
+                <a class="navbar-brand col-md-4 ms-3" href="/"><h3 class="logo"><span class="b-txt">Cinna</span><span class="c-txt">holic</span> </h3></a>
                 <button class="navbar-toggler bg-light navbar-light navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -55,15 +28,6 @@
                 </div>
                 <div class="collapse navbar-collapse log" id="navbarSupportedContent">
                     <ul class="navbar-nav mb-2 mb-lg-0 ms-5">
-                    <li class="nav-item position-relative ps-3">
-                        <a class="nav-link {{activate_wishlist}}" href="/cakes/wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                        {% if user.is_authenticated %}
-                            <span class="position-absolute top-0 start-100 mt-3 translate-middle badge rounded-pill" style="background-color:pink">
-                                {{wishlist_items_count}}
-                                <span class="visually-hidden">unread messages</span>
-                              </span>
-                            {% endif %}
-                    </li>
 
                     <li class="nav-item ps-3">
                         <a class="nav-link {{activate_mycart}}  position-relative" href="/cakes/mycart"><i class="fa fa-shopping-cart " aria-hidden="true"></i>

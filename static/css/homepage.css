@@ -4,16 +4,10 @@
 }
 .carousel-caption h5{
     font-size: 60px;
-    color: #753375;
+    color: #D79771 ;
     text-align: left;
+    padding-top: 2rem; 
     line-height: 70px;
-}
-.carousel-caption p{
-    color: #000;
-    text-align: left;
-    letter-spacing: 1px;
-    line-height: 28px;
-    margin-top: 15px;
 }
 #slider .purchase{
     visibility:hidden;
@@ -48,7 +42,8 @@
 }
 .welcome h4{
     font-family: "Playfair Display", serif;
-    color: #3e606b;
+    color: #9C0F48
+    ;
 }
 .welcome h6{
     font-size: 18px;
@@ -61,13 +56,13 @@
     line-height: 29px;
 }
 .welcome .btn{
-    background: #ea98a0;
+    background: #9C0F48 ;
     padding: 10px 20px;
     color: #fff;
     margin-bottom: 20px;
 }
 .welcome .btn:hover{
-    background-color: #fff;
+    background-color: #F9E4D4;
     color: #ea98a0;
     border: 1px solid #ea98a0;
     transition: 0.3s;
@@ -79,7 +74,7 @@
 .best-title h4{
     font-family: "Playfair Display", serif;
     font-weight: bold;
-    color: #3e606b;
+    color: #9C0F48;
     font-size: 38px;
 }
 .best-title h6{
@@ -90,11 +85,7 @@
     color: #ea98a0;
 
 }
-/* #owl-demo{
-    position: relative;
-    z-index: -1;
 
-} */
 #owl-demo .item{
     margin: 3px;
 
@@ -130,7 +121,7 @@
     font-size: 16px;
 }
 .item .best-click .btn{
-    background-color: #ea98a0;
+    background-color: #9C0F48;
     color: #fff;
     border-radius: 50px;
     padding: 8px 25px;
@@ -173,15 +164,16 @@
 
 }
 .our-glory .btn{
-    background-color: #ea98a0;
+    background-color: #9C0F48;
     color: #fff;
-    border: 2px solid #ea98a0;
+    border: 2px solid #ffffff;
     padding: 8px 16px;
     font-size: 17px;
 }
 .our-glory .btn:hover{
     background-color: #fff;
     color: #ea98a0;
+    border: 1px solid #ea98a0;
     transition: all 0.3s ease;
 }
 @media screen and (max-width:700px) {
@@ -214,7 +206,7 @@
 .service-title h4{
     font-family: "Playfair Display", serif;
     font-weight: bold;
-    color: #3e606b;
+    color: #9C0F48;
     font-size: 38px;
 }
 .service-title h6{
@@ -236,7 +228,7 @@
 }
 .service-content .btn{
     padding: 10px 18px;
-    background-color: #ea98a0;
+    background-color: #9C0F48;
     color: #fff;
 }
 .service-content .btn:hover{
@@ -254,16 +246,9 @@
     transition: all 0.9s ease;
     padding-top: 35px ;
 }
-.service-content .image-t:hover{
-    transform: scale(2,2);
-    overflow: hidden;
-    transition: all 1s ease-in-out;
-}
 
 @media screen and (max-width:700px) {
-    .service-content img:hover{
-        transform: scale(1,1);
-    }
+
     .service-content .img-cake{
         width: 100%;
     }
