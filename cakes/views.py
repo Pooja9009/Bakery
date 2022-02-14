@@ -454,8 +454,6 @@ def order_form(request, cart_id, cake_id):
     user = request.user
     cart = Cart.objects.get(id=cart_id)
     cake = Cake.objects.get(id=cake_id)
-    wishlist_items = Wishlist.objects.filter(user=user)
-    wishlist_items_count = wishlist_items.count()
     items = Cart.objects.filter(user=user)
     items_count = items.count()
     if request.method == 'POST':
