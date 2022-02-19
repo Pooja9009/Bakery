@@ -233,13 +233,10 @@ def show_cakes(request, category_id):
         user = request.user
         items = Cart.objects.filter(user=user)
         items_count = items.count()
-        wishlist_items = Wishlist.objects.filter(user=user)
-        wishlist_items_count = wishlist_items.count()
         context = {
             'activate_category': 'active',
             'categories': categories,
             'items_count': items_count,
-            'wishlist_items_count': wishlist_items_count
         }
         return render(request, 'cakes/show_cakes.html', context)
     else:
@@ -314,22 +311,6 @@ def add_to_cart(request, cake_id):
 #             return redirect('/cakes/mycart')
 #         else:
 #             messages.add_message(request, messages.ERROR, 'Unable to add to cart')
-@login_required
-@user_only
-def add_to_wishlist(request, cake_id):
-    user = request.user
-    cake = Cake.objects.get(id=cake_id)
-    check_presence = Wishlist.objects.filter(user=user, cake=cake)
-    if check_presence:
-        messages.add_message(request, messages.ERROR, 'Cake is already added!!Unable to add again')
-        return redirect('/cakes/wishlist')
-    else:
-        cart = Wishlist.objects.create(cake=cake, user=user)
-        if cart:
-            messages.add_message(request, messages.SUCCESS, 'Cakes added to wishlist successfully')
-            return redirect('/cakes/wishlist')
-        else:
-            messages.add_message(request, messages.ERROR, 'Unable to add to cart')
 
 
 @login_required
@@ -350,22 +331,6 @@ def show_cart_items(request):
 
 @login_required
 @user_only
-def show_wishlist_items(request):
-    user = request.user
-    wishlist_items = Wishlist.objects.filter(user=user).order_by('-id')
-    items = Cart.objects.filter(user=user)
-    wishlist_items_count = wishlist_items.count()
-    items_count = items.count()
-    context = {
-        'wishlist_items': wishlist_items,
-        'activate_wishlist': 'active',
-        'wishlist_items_count': wishlist_items_count,
-        'items_count': items_count
-    }
-    return render(request, 'cakes/wishlist.html',context)
-
-@login_required
-@user_only
 def remove_cart(request, cart_id):
     item = Cart.objects.get(id=cart_id)
     item.delete()
@@ -373,39 +338,30 @@ def remove_cart(request, cart_id):
 
 @login_required
 @user_only
-def remove_wishlist(request, wishlist_id):
-    item = Wishlist.objects.get(id=wishlist_id)
-    item.delete()
-    return redirect('/cakes/wishlist')
-
-@login_required
-@user_only
 def contact_form(request):
-    if request.user.is_authenticated:
-        user = request.user
-        items = Cart.objects.filter(user=user)
-        items_count = items.count()
-        wishlist_items = Wishlist.objects.filter(user=user)
-        wishlist_items_count = wishlist_items.count()
+    # if request.user.is_authenticated:
+    #     user = request.user
     if request.method == "POST":
         name = request.POST.get('name')
         email = request.POST.get('email')
         phone = request.POST.get('phone')
         message = request.POST.get('message')
-        data = {
-            'name': name,
-            'email': email,
-            'phone': phone,
-            'message': message,
-        }
-        message = '''
-                           Name: {} 
+        # data = {
+        #     'name': name,
+        #     'email': email,
+        #     'phone': phone,
+        #     'message': message,
+        # }
+        # message = '''
+        #                    Name: {} 
 
-                           New Message: {}
+        #                    New Message: {}
 
-                           From: {}
-                       '''.format(data['name'], data['message'], data['email'], data['phone'])
-        send_mail(data['name'], message, '', ['gem00ini99@gmail.com'])
+        #                    From: {}
+        #                '''.format(data['name'], data['message'], data['email'])
+
+
+        # send_mail(data['name'], message, '', ['help.cinnaholic@gmail.com'])
 
         form = MessageForm(request.POST)
         if form.is_valid():
@@ -419,9 +375,6 @@ def contact_form(request):
     context ={
         'form_message': MessageForm,
         'activate_contact': 'active',
-        'items_count':items_count,
-        'wishlist_items_count': wishlist_items_count
-
     }
     return render(request, 'cakes/contact.html', context)
 
@@ -491,7 +444,6 @@ def order_form(request, cart_id, cake_id):
 
     context = {
         'order_form': OrderForm,
-        'wishlist_items_count': wishlist_items_count,
         'items_count': items_count
     }
     return render(request, 'cakes/order_form.html', context)
@@ -545,14 +497,11 @@ def my_order(request):
     user = request.user
     orders = Order.objects.filter(user=user,payment_status=True).order_by('-id')
 
-    wishlist_items = Wishlist.objects.filter(user=user)
-    wishlist_items_count = wishlist_items.count()
     items = Cart.objects.filter(user=user)
     items_count = items.count()
     context = {
         'items':orders,
         'activate_profile':'active',
-        'wishlist_items_count': wishlist_items_count,
         'items_count': items_count
 
     }

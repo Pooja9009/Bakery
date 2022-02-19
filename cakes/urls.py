@@ -31,10 +31,6 @@ urlpatterns = [
     path('mycart', views.show_cart_items),
     path('remove_cart/<int:cart_id>', views.remove_cart),
 
-    path('add_to_wishlist/<int:cake_id>', views.add_to_wishlist),
-    path('wishlist', views.show_wishlist_items),
-    path('remove_wishlist/<int:wishlist_id>', views.remove_wishlist),
-
     path('order_form/<int:cart_id>/<int:cake_id>', views.order_form),
     path('my_orders', views.my_order),
     path('get_order', views.get_order),
