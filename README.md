@@ -65,25 +65,6 @@ $ python manage.py test app_name
  - [jQuery](https://jquery.com/) to add behaviour in simple way.
  - [Bootstrap](https://getbootstrap.com/) to write less css codes and save time.
 
-
- ## Screenshot🖼
- Few **Screenshot** of project are show below :
-<table>
-
-   <tr>
-    <td><img src='image-readme/home.png' alt="Home Page"  height='350' width='600'> </td>
-   </tr>
-  <tr>
-    <td><img src='image-readme/user.png' alt="User Panel" height='350' width='600'></td>
-  </tr>
-  <tr>
-    <td><img src='image-readme/admin.png' alt="Admin Panel" height='350' width='600'></td>
-  </tr>
-  
-  
- </table>
- 
-
 ## Credits
 **Websites, Blog Posts, Documentation**
 
