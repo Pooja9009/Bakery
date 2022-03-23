@@ -1,6 +1,6 @@
 # Bakery :cake:
 
-The Project **Gharelu** is developed using **django** , **Python**, **HTML**, **CSS**, **Bootstrap**, **JS**, **jQuery** &amp; **MySQL**.
+The Project **Bakery** is developed using **django** , **Python**, **HTML**, **CSS**, **Bootstrap**, **JS**, **jQuery** &amp; **MySQL**.
 
 ## Project Setup
 
